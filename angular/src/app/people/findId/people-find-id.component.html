@@ -1,0 +1,72 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="card bg-dark my-3">
+        <div class="card-body">
+          <ul class="text-center list-inline py-3">
+            <li class="list-inline-item">
+              <a class="btn btn-info" (click)=listAllPeople()>List all people</a>
+            </li>
+            <li class="list-inline-item">
+                  <form>
+                    <div>
+                      <input type="text"
+                             name="pesel"
+                             placeholder="Enter PESEL number"
+                             [(ngModel)] = "pesel" >
+                    </div>
+                    <button (click)="findPersonByPesel(pesel)"
+                            class="btn btn-info">Find a person using PESEL</button>
+                  </form>
+            </li>
+            <li class="list-inline-item">
+              <form>
+                <div>
+                  <input type="text"
+                         name="id"
+                         placeholder="Enter id number"
+                         [(ngModel)] = "id" >
+                </div>
+                <button (click)="findPersonById(id)"
+                        class="btn btn-info">Find a person using ID</button>
+              </form>
+            </li>
+          </ul>
+          <div class="card my-5">
+            <div class="card-body">
+              <table class="table table-bordered table-striped">
+                <thead class="thead-dark">
+                <tr>
+                  <th scope="col">#</th>
+                  <th scope="col">Pesel</th>
+                  <th scope="col">First Name</th>
+                  <th scope="col">Last Name</th>
+                  <th scope="col">Father Name</th>
+                  <th scope="col">Mother Name</th>
+                  <th scope="col">Birthdate</th>
+                  <th scope="col">Birthplace</th>
+                  <th scope="col">Id Card</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr *ngFor="let person of people">
+                  <td>{{ person.id }}</td>
+                  <td>{{ person.pesel }}</td>
+                  <td>{{ person.firstName }}</td>
+                  <td>{{ person.lastName }}</td>
+                  <td>{{ person.fatherName }}</td>
+                  <td>{{ person.motherName }}</td>
+                  <td>{{ person.birthdate }}</td>
+                  <td>{{ person.birthplace }}</td>
+                  <td>{{ person.idCard }}</td>
+                </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+</div>

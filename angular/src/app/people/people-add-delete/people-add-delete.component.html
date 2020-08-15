@@ -1,0 +1,125 @@
+<div class="card my-5" [ngClass] = "person">
+  <div class="card-body">
+    <form>
+      <div>
+        <input type="text"
+               name="pesel"
+               id = "pesel"
+               placeholder="Enter PESEL number"
+               [(ngModel)] = "person.pesel" >
+      </div>
+      <div>
+        <input type="text"
+               name="firstName"
+               id="firstName"
+               placeholder="Enter PESEL number"
+               [(ngModel)] = "person.firstName" >
+      </div>
+      <div>
+        <input type="text"
+               name="lastName"
+               id="lastName"
+               placeholder="Enter PESEL number"
+               [(ngModel)] = "person.lastName" >
+      </div>
+      <div>
+        <input type="text"
+               name="fatherName"
+               id="fatherName"
+               placeholder="Enter PESEL number"
+               [(ngModel)] = "person.fatherName" >
+      </div>
+      <div>
+        <input type="text"
+               name="motherName"
+               id="motherName"
+               placeholder="Enter PESEL number"
+               [(ngModel)] = "person.motherName" >
+      </div>
+      <button (click)="save()"
+              class="btn btn-info">Find a person using PESEL</button>
+    </form>
+    <div class="card my-5">
+      <div class="card-body">
+        <table class="table table-bordered table-striped">
+          <thead class="thead-dark">
+          <tr>
+            <th scope="col">Pesel</th>
+            <th scope="col">First Name</th>
+            <th scope="col">Last Name</th>
+            <th scope="col">Father Name</th>
+            <th scope="col">Mother Name</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr *ngFor="let person of people">
+            <td>{{ person.pesel }}</td>
+            <td>{{ person.firstName }}</td>
+            <td>{{ person.lastName }}</td>
+            <td>{{ person.fatherName }}</td>
+            <td>{{ person.motherName }}</td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<!--
+<div class="card my-5" *ngIf="false">
+  <div class="card-body">
+    <form>
+      <div class="form-group">
+        <label for="pesel">Pesel</label>
+        <input type="text" [(ngModel)]="person.pesel"
+               class="form-control"
+               id="pesel"
+               name="pesel"
+               placeholder="Enter PESEL"
+               required #pesel="ngModel">
+      </div>
+      <div class="form-group">
+        <label for="firstName">First Name</label>
+        <input type="text" [(ngModel)]="person.firstName"
+               class="form-control"
+               id="firstName"
+               name="firstName"
+               placeholder="Enter first name"
+               required #firstName="ngModel">
+      </div>
+      <div class="form-group">
+        <label for="lastName">Last Name</label>
+        <input type="text" [(ngModel)]="person.lastName"
+               class="form-control"
+               id="lastName"
+               name="lastName"
+               placeholder="Enter first name"
+               required #lastName="ngModel">
+      </div>
+      <div class="form-group">
+        <label for="fatherName">Father Name</label>
+        <input type="text" [(ngModel)]="person.fatherName"
+               class="form-control"
+               id="fatherName"
+               name="fatherName"
+               placeholder="Enter father name"
+               required #fatherName="ngModel">
+      </div>
+      <div class="form-group">
+        <label for="motherName">Mother Name</label>
+        <input type="text" [(ngModel)]="person.motherName"
+               class="form-control"
+               id="motherName"
+               name="motherName"
+               placeholder="Enter mother name"
+               required #motherName="ngModel">
+      </div>
+      <button class="btn btn-info" (click)=save()>Submit</button>
+    </form>
+  </div>
+</div>
+
+-->
